@@ -6,6 +6,7 @@ import Snackbar from '@mui/material/Snackbar';
 import AddCustomer from './AddCustomer';
 import EditCustomer from './EditCustomer';
 
+
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
 
@@ -83,6 +84,7 @@ function Customerlist() {
     }
     //update customer
 
+
     const columns = [
         {headerName: 'First name', field: 'firstname', sortable: true, filter: true},
         {headerName: 'Last name', field: 'lastname', sortable: true, filter: true},
@@ -107,7 +109,8 @@ function Customerlist() {
             color="error">
                 Delete
             </Button>
-        }
+        },
+
     ]
 
     return(

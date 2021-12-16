@@ -19,9 +19,9 @@ function AddCustomer(props) {
         phone: '',
     })
 
-    //        {headerName: 'First name', field: 'firstname', sortable: true, filter: true},
+   // {headerName: 'First name', field: 'firstname', sortable: true, filter: true},
    // {headerName: 'Last name', field: 'lastname', sortable: true, filter: true},
-    //{headerName: 'Street address', field: 'streetaddress', sortable: true, filter: true},
+   // {headerName: 'Street address', field: 'streetaddress', sortable: true, filter: true},
    // {field: 'postcode', sortable: true, filter: true},
    // {field: 'city', sortable: true, filter: true},
    // {field: 'email', sortable: true, filter: true},

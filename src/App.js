@@ -5,14 +5,13 @@ import Customerspage from './pages/Customers';
 import Trainingspage from './pages/Trainings';
 
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { typography } from '@mui/system';
 
-import Customerlist from './components/Customerlist';
 
-// en tiedä nyt nuo linkkien osoitteet
+
+
+// BrowserRouterilla linkit ja linkkien osoitteet
 
 function App() {
   return (

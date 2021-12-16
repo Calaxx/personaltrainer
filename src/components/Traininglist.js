@@ -1,17 +1,18 @@
 import React, { useEffect, useState} from "react";
 import { AgGridReact } from 'ag-grid-react';
 import Button from '@mui/material/Button';
-import Snackbar from '@mui/material/Snackbar';
-//import AddCar from './AddCar';
-//import EditCar from './EditCar';
+//import Snackbar from '@mui/material/Snackbar';
+//import AddTraining from './AddTraining';
+
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
+//import { linkClasses } from "@mui/material";
 
 function Traininglist() {
     const [trainings, setTrainings] = useState([]);
-    const [open, setOpen] = useState(false);
-    const [msg, setMsg] = useState('');
+//    const [open, setOpen] = useState(false);
+//    const [msg, setMsg] = useState('');
 
     useEffect(() =>{
         fetchTrainings();
@@ -25,6 +26,24 @@ function Traininglist() {
         .catch(err => console.error(err))
     }
 
+    //delete training
+    const deleteTraining = (trainingid) => {   
+        console.log(trainingid);
+        if (window.confirm('Are you sure?')) {
+            fetch('https://customerrest.herokuapp.com/api/trainings/' + trainingid, { method: 'DELETE' })
+            .then(response => {
+                if (response.ok) {
+                    fetchTrainings();
+                }
+                else {
+                    alert('Training could not be deleted');
+                }
+            })
+            .catch(err => console.error(err))
+        }
+    }
+    //delete training
+
     const columns = [
         {field: 'date', sortable: true, filter: true},
         {field: 'duration', sortable: true, filter: true},
@@ -35,7 +54,19 @@ function Traininglist() {
         },
        // {field: 'customer.firstname', sortable: true, filter: true},
        // {field: 'customer.lastname', sortable: true, filter: true},
-        //{field: 'content', sortable: true, filter: true},
+
+       // tässä treeni haetaan id:lla ja passataan deletetrainingin urliin
+       {
+            headerName: ' ',
+            field: 'id',
+            width: 120,
+            cellRendererFramework: params =>
+            <Button size="small" 
+            onClick={() => deleteTraining(params.value)}
+            color="error">
+                Delete
+            </Button>
+       }
     ]
 
     return(

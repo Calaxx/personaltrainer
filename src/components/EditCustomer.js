@@ -61,7 +61,7 @@ function EditCustomer(props) {
               value={customer.firstname}
               onChange={inputChanged}
               margin="dense"
-              label="Firstname"
+              label="First name"
               fullWidth
               variant="standard"
             />
@@ -70,7 +70,7 @@ function EditCustomer(props) {
               value={customer.lastname}
               onChange={inputChanged}
               margin="dense"
-              label="Lastname"
+              label="Last name"
               fullWidth
               variant="standard"
             />
@@ -79,7 +79,7 @@ function EditCustomer(props) {
               value={customer.streetaddress}
               onChange={inputChanged}
               margin="dense"
-              label="Streetaddress"
+              label="Street address"
               fullWidth
               variant="standard"
             />
